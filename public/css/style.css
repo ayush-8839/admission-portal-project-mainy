@@ -6,14 +6,6 @@ body{
     background: #e0d050 !important;
 }
 
-::placeholder{
-    color: rgb(0, 0, 0) !important;
-    font-weight: lighter;
-}
-
-label{
-    padding-top: 10% !important;
-}
 
 button{
     background: #183e65 !important; 
@@ -98,6 +90,3 @@ button{
         margin-bottom: 2rem;
     }
 }
-
-
-

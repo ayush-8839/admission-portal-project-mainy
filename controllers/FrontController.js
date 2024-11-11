@@ -15,7 +15,8 @@ claudinary.config({
 class FrontController {
   static home = async (req, res) => {
     try {
-      res.render("home"); // home.ejs file
+      const {name,email,image} =req.userData
+      res.render("home",{n:name,e:email,i:image}); // home.ejs file
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +24,8 @@ class FrontController {
 
   static about = async (req, res) => {
     try {
-      res.render("about");
+      const {name,email,image} =req.userData
+      res.render("about",{n:name,e:email,i:image});
     } catch (error) {
       console.log(error);
     }
@@ -53,7 +55,8 @@ class FrontController {
 
   static contact = async (req, res) => {
     try {
-      res.render("contact");
+      const {name,email,image} =req.userData
+      res.render("contact",{n:name,e:email,i:image});
     } catch (error) {
       console.log(error);
     }
@@ -147,10 +150,13 @@ class FrontController {
 
   static logout = async (req, res) => {
     try {
+      res.clearCookie("token") // token to expire kar dega
       res.redirect("/");
     } catch (error) {
       console.log(error);
     }
   };
+
+  
 }
 module.exports = FrontController;
